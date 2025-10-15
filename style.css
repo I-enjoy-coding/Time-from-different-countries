@@ -1,0 +1,79 @@
+/* reset basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  color: #f0f9ff;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header input {
+  font-size: 1rem;
+  padding: 8px 12px;
+  width: 80%;
+  max-width: 400px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+main#clocks-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Each clock card */
+.clock-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.clock-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.clock-zone {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.clock-time {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
